@@ -24,13 +24,13 @@ export const myProvider = isTestEnvironment
     })
   : customProvider({
       languageModels: {
-        'chat-model': google('gemini-2.0-flash-lite'),
+        'chat-model': google('gemini-2.5-flash-lite'),
         'chat-model-reasoning': wrapLanguageModel({
-          model: google('gemini-2.0-flash-lite'),
+          model: google('gemini-2.5-flash-lite'),
           middleware: extractReasoningMiddleware({ tagName: 'think' }),
         }),
-        'title-model': google('gemini-2.0-flash-lite'),
-        'artifact-model': google('gemini-2.0-flash-lite'),
+        'title-model': google('gemini-2.5-flash-lite'),
+        'artifact-model': google('gemini-2.5-flash-lite'),
       },
       // imageModels: {
       //   'small-model': xai.imageModel('grok-2-image'),
