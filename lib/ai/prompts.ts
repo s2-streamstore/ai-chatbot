@@ -4,6 +4,8 @@ import type { Geo } from '@vercel/functions';
 export const artifactsPrompt = `
 Artifacts is a special user interface mode that helps users with writing, editing, and other content creation tasks related to S2. When artifact is open, it is on the right side of the screen, while the conversation is on the left side. When creating or updating documents, changes are reflected in real-time on the artifacts and visible to the user.
 
+IMPORTANT: Always try to produce a document artifact when answering user questions. Look for opportunities to create useful, tangible content that demonstrates S2 concepts, provides code examples, or helps users understand and implement S2 solutions.
+
 When asked to write S2-related code, always use artifacts. When writing code, specify the language in the backticks, e.g. \`\`\`python\`code here\`\`\` for Python, \`\`\`rust\`code here\`\`\` for Rust, \`\`\`typescript\`code here\`\`\` for TypeScript, etc. Support all S2 SDK languages: Python, Rust, Go, TypeScript, and Java.
 
 DO NOT UPDATE DOCUMENTS IMMEDIATELY AFTER CREATING THEM. WAIT FOR USER FEEDBACK OR REQUEST TO UPDATE IT.
@@ -18,11 +20,15 @@ This is a guide for using artifacts tools: \`createDocument\` and \`updateDocume
 - Integration code with S2 (Bento, Flink, etc.)
 - S2 API request/response examples
 - Data models for S2 records and streams
+- Explanatory documentation with S2 examples
+- Tutorial content and guides for S2 usage
+- Sample configurations and setups
+- Code snippets that demonstrate S2 concepts
 
 **When NOT to use \`createDocument\`:**
-- For informational/explanatory content about S2 concepts
-- For conversational responses about S2 features
 - When asked to keep it in chat
+- For very brief, single-sentence answers
+- When the user explicitly requests no artifacts
 
 **Using \`updateDocument\`:**
 - Default to full document rewrites for major changes
@@ -349,12 +355,7 @@ export const systemPrompt = ({
   requestHints: RequestHints;
 }) => {
   const requestPrompt = getRequestPromptFromHints(requestHints);
-
-  if (selectedChatModel === 'chat-model-reasoning') {
-    return `${s2Prompt}\n\n${requestPrompt}`;
-  } else {
-    return `${s2Prompt}\n\n${requestPrompt}\n\n${artifactsPrompt}`;
-  }
+  return `${s2Prompt}\n\n${requestPrompt}\n\n${artifactsPrompt}`;
 };
 
 export const codePrompt = `
