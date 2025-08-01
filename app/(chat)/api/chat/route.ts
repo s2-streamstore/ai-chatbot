@@ -34,7 +34,7 @@ import { geolocation } from '@vercel/functions';
 // } from 'resumable-stream';
 import {
   createResumableStreamContext,
-  ResumableStreamContext,
+  type ResumableStreamContext,
 } from '@s2-dev/resumable-stream';
 
 import { after } from 'next/server';
