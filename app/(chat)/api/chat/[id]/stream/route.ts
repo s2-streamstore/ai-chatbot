@@ -66,9 +66,7 @@ export async function GET(
     execute: () => {},
   });
 
-  const stream = await streamContext.resumableStream(recentStreamId, () =>
-    emptyDataStream.pipeThrough(new JsonToSseTransformStream()),
-  );
+  const stream = await streamContext.resumeStream(recentStreamId);
 
   /*
    * For when the generation is streaming during SSR

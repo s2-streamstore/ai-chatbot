@@ -28,10 +28,15 @@ import { myProvider } from '@/lib/ai/providers';
 import { entitlementsByUserType } from '@/lib/ai/entitlements';
 import { postRequestBodySchema, type PostRequestBody } from './schema';
 import { geolocation } from '@vercel/functions';
+// import {
+//   createResumableStreamContext,
+//   type ResumableStreamContext,
+// } from 'resumable-stream';
 import {
   createResumableStreamContext,
-  type ResumableStreamContext,
-} from 'resumable-stream';
+  ResumableStreamContext,
+} from '@s2-dev/resumable-stream';
+
 import { after } from 'next/server';
 import { ChatSDKError } from '@/lib/errors';
 import type { ChatMessage } from '@/lib/types';
@@ -211,7 +216,7 @@ export async function POST(request: Request) {
 
     if (streamContext) {
       return new Response(
-        await streamContext.resumableStream(streamId, () =>
+        await streamContext.resumableStream(streamId,
           stream.pipeThrough(new JsonToSseTransformStream()),
         ),
       );
