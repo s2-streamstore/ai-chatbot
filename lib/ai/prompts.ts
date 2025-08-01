@@ -222,8 +222,6 @@ Example: AMG8833 infrared thermal sensor monitoring with Raspberry Pi
 - **Auto-prefix streams** for transparent namespacing
 
 ### Security Features
-- **Encryption**: TLS for data in transit, cloud encryption for data at rest
-- **Client-side encryption** recommended for strongest protection
 - **Fine-grained access control** at stream and operation level
 - **Responsible disclosure** program: security@s2.dev
 
