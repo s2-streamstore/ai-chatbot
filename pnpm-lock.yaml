@@ -72,8 +72,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@19.0.0-rc-45804af1-20241021(react@19.0.0-rc-45804af1-20241021))(react@19.0.0-rc-45804af1-20241021)
       '@s2-dev/resumable-stream':
-        specifier: ^1.8.0
-        version: 1.8.0
+        specifier: ^1.9.0
+        version: 1.9.0
       '@vercel/analytics':
         specifier: ^1.3.1
         version: 1.5.0(next@15.3.0-canary.31(@opentelemetry/api@1.9.0)(@playwright/test@1.51.0)(react-dom@19.0.0-rc-45804af1-20241021(react@19.0.0-rc-45804af1-20241021))(react@19.0.0-rc-45804af1-20241021))(react@19.0.0-rc-45804af1-20241021)
@@ -1594,8 +1594,8 @@ packages:
   '@rushstack/eslint-patch@1.11.0':
     resolution: {integrity: sha512-zxnHvoMQVqewTJr/W4pKjF0bMGiKJv1WX7bSrkl46Hg0QjESbzBROWK0Wg4RphzSOS5Jiy7eFimmM3UgMrMZbQ==}
 
-  '@s2-dev/resumable-stream@1.8.0':
-    resolution: {integrity: sha512-dpuRWpw9xsNTsbIUOqXX4u1y/bp8TZd413/ISKPXSWmahTdXB9i1mwGnrAoHLAOEJRPg9Jul0xDAfpKd/GIqqg==}
+  '@s2-dev/resumable-stream@1.9.0':
+    resolution: {integrity: sha512-CyAjYqMw5k5MAjR9RqvzkwV+fVNg/xDFZOOPSDDiwyNNzIQy7mBNvZXFyWJ/mXl7J1mrq/GOLiGrCLYuh+C28g==}
 
   '@s2-dev/streamstore@0.15.8':
     resolution: {integrity: sha512-24khiBAndr8az3W6YDbHLrS8YFu2lS9tlM3kPna7fUR21FmJRoRJF2PqA190WCCEkinbtt41d1xUwW4itU6X2A==}
@@ -5087,7 +5087,7 @@ snapshots:
 
   '@rushstack/eslint-patch@1.11.0': {}
 
-  '@s2-dev/resumable-stream@1.8.0':
+  '@s2-dev/resumable-stream@1.9.0':
     dependencies:
       '@s2-dev/streamstore': 0.15.8
       rimraf: 6.0.1
